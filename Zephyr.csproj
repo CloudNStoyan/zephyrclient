@@ -5,7 +5,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Description>A Rest API client for Riot Game's API</Description>
+    <Description>A lightweight Rest API client for Riot Game's API</Description>
+    <Authors>CloudNStoyan</Authors>
+    <RepositoryUrl>https://github.com/CloudNStoyan</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
