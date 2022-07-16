@@ -5,13 +5,17 @@ namespace Zephyr.MatchV5
     public class MatchEndpoint
     {
         private HttpClient HttpClient { get; }
-        private const string BaseUrl = "https://europe.api.riotgames.com/lol/match/v5/matches/";
+        private readonly string BaseUrl;
 
-        public MatchEndpoint(HttpClient httpClient)
+        public MatchEndpoint(HttpClient httpClient, MatchRegion region)
         {
             this.HttpClient = httpClient;
+            this.BaseUrl = Utils.GenerateBaseUrlWithRegion(region) + "match/v5/matches/";
         }
 
+        /// <summary>
+        /// Get a list of match ids by puuid.
+        /// </summary>
         public async Task<string[]?> GetMatchIdsByPuuid(string puuid, MatchQueryParams? queryParams = null)
         {
             string? queries = queryParams?.ToUrlQuery();
@@ -24,6 +28,9 @@ namespace Zephyr.MatchV5
             return JsonConvert.DeserializeObject<string[]>(json);
         }
 
+        /// <summary>
+        /// Get a match by match id.
+        /// </summary>
         public async Task<Match?> GetMatchByMatchId(string matchId)
         {
             string requestUrl = $"{BaseUrl}{matchId}";

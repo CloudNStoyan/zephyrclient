@@ -5,13 +5,17 @@ namespace Zephyr.LeagueV4
     public class LeagueEndpoint
     {
         private HttpClient HttpClient { get; }
-        private const string BaseUrl = "https://eun1.api.riotgames.com/lol/league/v4/";
+        private readonly string BaseUrl;
 
-        public LeagueEndpoint(HttpClient httpClient)
+        public LeagueEndpoint(HttpClient httpClient, Region region)
         {
-            HttpClient = httpClient;
+            this.HttpClient = httpClient;
+            this.BaseUrl = Utils.GenerateBaseUrlWithRegion(region) + "league/v4/";
         }
 
+        /// <summary>
+        /// Get league entries in all queues for a given summoner ID.
+        /// </summary>
         public async Task<League[]?> GetLeagueEntriesBySummonerId(string summonerId)
         {
             string requestUrl = $"{BaseUrl}entries/by-summoner/{summonerId}";
