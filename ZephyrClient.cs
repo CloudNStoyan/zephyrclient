@@ -1,6 +1,7 @@
 ﻿using Zephyr.ChampionMasteryV4;
 using Zephyr.LeagueV4;
 using Zephyr.MatchV5;
+using Zephyr.Static;
 using Zephyr.SummonerV4;
 
 namespace Zephyr
@@ -13,6 +14,7 @@ namespace Zephyr
 
         public MatchEndpoint Match { get; }
         public ChampionMasteryEndpoint ChampionMastery { get; }
+        public DDragon DDragon { get; set; }
 
         public ZephyrClient(string apiKey, Region region, MatchRegion matchRegion)
         {
@@ -24,6 +26,7 @@ namespace Zephyr
             this.League = new LeagueEndpoint(httpClient, region);
             this.Match = new MatchEndpoint(httpClient, matchRegion);
             this.ChampionMastery = new ChampionMasteryEndpoint(httpClient, region);
+            this.DDragon = new DDragon();
         }
     }
 }

@@ -7,10 +7,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Description>A lightweight Rest API client for Riot Game's API</Description>
     <Authors>CloudNStoyan</Authors>
-    <RepositoryUrl>https://github.com/CloudNStoyan</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CloudNStoyan/zephyrclient</RepositoryUrl>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.1.0</Version>
+    <PackageProjectUrl>https://github.com/CloudNStoyan/zephyrclient</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
